@@ -1,8 +1,6 @@
 FROM resin/rpi-raspbian:jessie
 
-## enable building ARM container on x86 machinery on the web (comment out next 3 lines if built on Raspberry)
-#ENV QEMU_EXECVE 1
-#COPY armv7hf-debian-qemu /usr/bin
+# Enable building ARM container on x86 machinery on the web (comment out next line if built on Raspberry)
 RUN [ "cross-build-start" ]
 
 RUN apt-get clean && apt-get update && apt-get install -y --no-install-recommends xserver-xorg xinit \
